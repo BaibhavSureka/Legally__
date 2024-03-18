@@ -17,7 +17,7 @@ const ChatUI = () => {
       setIsLoading(true)
 
       try {
-        const response = await fetch('', {
+        const response = await fetch('http://localhost:8000/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const ChatUI = () => {
   }, [messages])
 
   return (
-    <div className="flex flex-col bg-gray-900 text-white h-screen">
+    <div className="flex f'mt-50 m-40 p-50'">
       <div className="flex-1 mr-10 ml-10 mt-20 overflow-y-auto" ref={chatContainerRef}>
         <ScrollArea className="h-full">
           <div className="space-y-4">
@@ -62,7 +62,7 @@ const ChatUI = () => {
                 />
                 <div
                   className={`px-4 py-2 rounded-lg ${
-                    message.sender === 'user' ? 'bg-blue-500' : 'bg-gray-700'
+                    message.sender === 'user' ? 'bg-indigo-800' : 'bg-gray-700'
                   }`}
                 >
                   {message.text}

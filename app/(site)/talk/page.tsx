@@ -11,11 +11,9 @@ const CardWithInput = () => {
     const [buttonDisabled, setButtonDisabled] = useState(false); 
 
     const handleSubmit = () => {
-       
         const payload = {
             phone: phone
         };
-
         fetch("http://localhost:8000/talk", {
             method: "POST",
             headers: {
@@ -23,23 +21,23 @@ const CardWithInput = () => {
             },
             body: JSON.stringify(payload)
         });
-
-        setButtonText("You will get a call from your AI expert lawyer in a Minute");
+        setButtonText("You will get a call from your AI expert lawyer in a minute");
         setButtonColor("gray");
         setButtonDisabled(true);
     };
 
     return (
-        <div className='mt-50 m-40 p-50'>
-            <Card className="mx-auto mt-10">
-                <CardContent>
+        <div className='flex justify-center items-center h-screen'>
+            <Card className="w-full max-w-md">
+                <CardContent className="p-6">
+                    <h2 className="text-xl font-semibold mb-4">Contact an Expert Lawyer</h2>
                     <Input
                         placeholder="Enter Phone Number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                     />
                 </CardContent>
-                <CardFooter className="flex justify-end">
+                <CardFooter className="p-6 flex justify-end">
                     <Button onClick={handleSubmit} color={buttonColor} disabled={buttonDisabled}>
                         {buttonText}
                     </Button>

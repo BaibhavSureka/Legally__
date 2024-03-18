@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Hero from "@/components/Hero";
 import Integration from "@/components/Integration";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
@@ -22,11 +21,9 @@ export default function Home() {
       <div className="lato"> 
         <Feature />
         <div>
-
         </div>
         <Integration />
         <CTA />
-
         <Testimonial  />
         <Contact />
         <Footer />
